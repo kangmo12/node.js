@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home</title>
+</head>
+<body>
+  <div align="center">
+  <h1>도서목록</h1>
+  <hr>
+  <table width ="70%" border="1">
+    <tr>
+      <th>번호</th>
+      <th>제목</th>
+      <th>가격</th>
+      <th>수량</th>
+      <th>저자</th>
+    </tr>
+<% list.forEach(function(user,index){ %>
+  <tr>
+    <td><%= user.bk_num %></td>
+    <td><%= user.bk_name %></td>
+    <td><%= user.bk_price %></td>
+    <td><%= user.bk_quan %></td>
+    <td><%= user.writer %></td>
+  </tr>
+<% }); %>
+</table>
+  <input type="button" value="회원탈퇴" onclick="userDelete()">
+  <input type="button" value="로그아웃" onclick="logout()">
+</div>
+<script type="text/javascript">
+  function logout(){
+    location.href="/";
+  }
+  function userDelete(){
+    location.href="/userDelete";
+  }
+</script>
+</body>
+</html>
